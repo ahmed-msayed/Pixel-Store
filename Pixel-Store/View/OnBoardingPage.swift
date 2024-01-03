@@ -55,10 +55,3 @@ struct OnBoardingPage_Previews: PreviewProvider {
 //            .previewDevice("iPhone Xs")
     }
 }
-
-// to get screen bounds
-extension View {
-    func getRect()-> CGRect {
-        return UIScreen.main.bounds
-    }
-}
