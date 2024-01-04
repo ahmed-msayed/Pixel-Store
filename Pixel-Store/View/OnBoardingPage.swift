@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-let customFont = "Raleway-Regular"
-
 struct OnBoardingPage: View {
     var body: some View {
         VStack(alignment: .leading){

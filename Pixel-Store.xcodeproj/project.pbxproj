@@ -10,6 +10,7 @@
 		E2584EBA2B235D210075E21B /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2584EB92B235D210075E21B /* OnBoardingPage.swift */; };
 		E2798A852B45FDA50014420A /* Ext-View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2798A842B45FDA50014420A /* Ext-View.swift */; };
 		E2798A872B45FF0D0014420A /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2798A862B45FF0D0014420A /* CustomCorners.swift */; };
+		E2798A892B4601200014420A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2798A882B4601200014420A /* Constants.swift */; };
 		E28169132B249B74006DEAB0 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28169102B249B73006DEAB0 /* Raleway-Bold.ttf */; };
 		E28169142B249B74006DEAB0 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28169112B249B73006DEAB0 /* Raleway-SemiBold.ttf */; };
 		E28169152B249B74006DEAB0 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E28169122B249B74006DEAB0 /* Raleway-Regular.ttf */; };
@@ -26,6 +27,7 @@
 		E2584EB92B235D210075E21B /* OnBoardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
 		E2798A842B45FDA50014420A /* Ext-View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-View.swift"; sourceTree = "<group>"; };
 		E2798A862B45FF0D0014420A /* CustomCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		E2798A882B4601200014420A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E28169102B249B73006DEAB0 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		E28169112B249B73006DEAB0 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		E28169122B249B74006DEAB0 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				E2798A842B45FDA50014420A /* Ext-View.swift */,
+				E2798A882B4601200014420A /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				E2798A852B45FDA50014420A /* Ext-View.swift in Sources */,
 				E2798A872B45FF0D0014420A /* CustomCorners.swift in Sources */,
 				E2B1AF972B2271E300E9A76B /* Pixel_StoreApp.swift in Sources */,
+				E2798A892B4601200014420A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
