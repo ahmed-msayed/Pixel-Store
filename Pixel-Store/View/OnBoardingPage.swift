@@ -61,7 +61,7 @@ struct OnBoardingPage_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingPage()
             .previewDevice("iPhone 15 Pro")
-//        OnBoardingPage()
-//            .previewDevice("iPhone Xs")
+        //        OnBoardingPage()
+        //            .previewDevice("iPhone Xs")
     }
 }

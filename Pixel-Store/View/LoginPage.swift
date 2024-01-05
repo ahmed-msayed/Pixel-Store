@@ -80,7 +80,7 @@ struct LoginPage: View {
                     }
                     .padding(.top, 8)
                     .frame(maxWidth: .infinity, alignment: .leading)
-
+                    
                     //Login Button
                     Button {
                         if loginData.registeredUser {
@@ -134,7 +134,6 @@ struct LoginPage: View {
             loginData.showPassword = false
             loginData.showReEnterPassword = false
         }
-        
     }
     
     //Custom Text Fields Function
@@ -161,12 +160,11 @@ struct LoginPage: View {
                 if title.contains("Password") {
                     Button (action: {
                         showPassword.wrappedValue.toggle()
-
                     }, label: {
                         Text(showPassword.wrappedValue ? "Hide" : "Show")
                             .font(.custom(customFont, size: 13).bold())
                             .foregroundStyle(Color.indigo)
-                    }) 
+                    })
                     .offset(y: 8)
                 }
             }, alignment: .trailing
