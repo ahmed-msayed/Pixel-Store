@@ -89,7 +89,7 @@ struct LoginPage: View {
                             loginData.register()
                         }
                     } label: {
-                        Text("Login")
+                        Text(loginData.registeredUser ? "Register" :"Login")
                             .font(.custom(customFont, size: 17)).bold()
                             .padding(.vertical, 20)
                             .frame(maxWidth: .infinity)
@@ -107,7 +107,7 @@ struct LoginPage: View {
                             loginData.registeredUser.toggle()
                         }
                     } label: {
-                        Text("Create Account")
+                        Text(loginData.registeredUser ? "Back To Login" : "Create Account")
                             .font(.custom(customFont, size: 14))
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.indigo)
@@ -125,6 +125,16 @@ struct LoginPage: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.indigo)
+        
+        //Clear Data When Change
+        .onChange(of: loginData.registeredUser) { oldValue, newValue in
+            loginData.email = ""
+            loginData.password = ""
+            loginData.reEnterPassword = ""
+            loginData.showPassword = false
+            loginData.showReEnterPassword = false
+        }
+        
     }
     
     //Custom Text Fields Function

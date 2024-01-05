@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OnBoardingPage: View {
+    
+    @State var showLoginPage: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Find your\nGadget")
@@ -18,7 +21,9 @@ struct OnBoardingPage: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             Button {
-
+                withAnimation {
+                    showLoginPage = true
+                }
             } label: {
                 Text("Get Started")
                     .font(.custom(customFont, size: 18))
@@ -39,8 +44,15 @@ struct OnBoardingPage: View {
         .padding()
         .padding(.top, getRect().height < 720 ? 0 : 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Color.indigo
+        .background(Color.indigo)
+        
+        .overlay(
+            Group {
+                if showLoginPage {
+                    LoginPage()
+                        .transition(.move(edge: .bottom))
+                }
+            }
         )
     }
 }
