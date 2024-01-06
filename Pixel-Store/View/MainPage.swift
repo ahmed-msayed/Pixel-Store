@@ -38,7 +38,7 @@ struct MainPage: View {
                             .renderingMode(.template)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
-                            //little shadow
+                        //little shadow
                             .background(
                                 Color.indigo
                                     .opacity(0.2)
@@ -47,7 +47,7 @@ struct MainPage: View {
                                     .padding(-7)
                                     .opacity(currentTab == tab ? 1 : 0)
                             )
-                            //
+                        //
                             .frame(maxWidth: .infinity)
                             .foregroundStyle(currentTab == tab ? Color.indigo : Color.black.opacity(0.5))
                     }

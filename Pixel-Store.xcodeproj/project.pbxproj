@@ -18,6 +18,8 @@
 		E281691A2B24AF3D006DEAB0 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28169192B24AF3D006DEAB0 /* LoginPageModel.swift */; };
 		E293BA442B481C220086CA2A /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA432B481C220086CA2A /* MainPage.swift */; };
 		E293BA472B489E5D0086CA2A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA462B489E5D0086CA2A /* Home.swift */; };
+		E293BA4A2B49F9C00086CA2A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA492B49F9C00086CA2A /* Product.swift */; };
+		E293BA4C2B49FF490086CA2A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA4B2B49FF490086CA2A /* HomeViewModel.swift */; };
 		E2B1AF972B2271E300E9A76B /* Pixel_StoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1AF962B2271E300E9A76B /* Pixel_StoreApp.swift */; };
 		E2B1AF992B2271E300E9A76B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1AF982B2271E300E9A76B /* ContentView.swift */; };
 		E2B1AF9B2B2271E500E9A76B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B1AF9A2B2271E500E9A76B /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		E28169192B24AF3D006DEAB0 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		E293BA432B481C220086CA2A /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		E293BA462B489E5D0086CA2A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		E293BA492B49F9C00086CA2A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E293BA4B2B49FF490086CA2A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E2B1AF932B2271E300E9A76B /* Pixel-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B1AF962B2271E300E9A76B /* Pixel_StoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel_StoreApp.swift; sourceTree = "<group>"; };
 		E2B1AF982B2271E300E9A76B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E28169192B24AF3D006DEAB0 /* LoginPageModel.swift */,
+				E293BA4B2B49FF490086CA2A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -100,6 +105,14 @@
 				E293BA462B489E5D0086CA2A /* Home.swift */,
 			);
 			path = TabViews;
+			sourceTree = "<group>";
+		};
+		E293BA482B49F9AD0086CA2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E293BA492B49F9C00086CA2A /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E2B1AF8A2B2271E300E9A76B = {
@@ -121,6 +134,7 @@
 		E2B1AF952B2271E300E9A76B /* Pixel-Store */ = {
 			isa = PBXGroup;
 			children = (
+				E293BA482B49F9AD0086CA2A /* Model */,
 				E2798A832B45FD770014420A /* Extensions */,
 				E28169182B24ADBA006DEAB0 /* ViewModel */,
 				E2584EB82B235D050075E21B /* View */,
@@ -220,7 +234,9 @@
 				E293BA472B489E5D0086CA2A /* Home.swift in Sources */,
 				E293BA442B481C220086CA2A /* MainPage.swift in Sources */,
 				E2B1AF992B2271E300E9A76B /* ContentView.swift in Sources */,
+				E293BA4A2B49F9C00086CA2A /* Product.swift in Sources */,
 				E2584EBA2B235D210075E21B /* OnBoardingPage.swift in Sources */,
+				E293BA4C2B49FF490086CA2A /* HomeViewModel.swift in Sources */,
 				E2798A852B45FDA50014420A /* Ext-View.swift in Sources */,
 				E2798A872B45FF0D0014420A /* CustomCorners.swift in Sources */,
 				E2B1AF972B2271E300E9A76B /* Pixel_StoreApp.swift in Sources */,
