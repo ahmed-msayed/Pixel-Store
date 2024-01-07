@@ -49,6 +49,23 @@ struct Home: View {
                     .padding(.horizontal, 25)
                 }
                 .padding(.top,28)
+                
+                //products page
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 25) {
+                        ForEach(homeData.products) { product in
+                            //product card
+                            //simple but returns all data each time then filter
+                            //if product.type == homeData.productType {
+                                productCardView(product: product)
+                            //}
+                        }
+                    }
+                    .padding(.horizontal, 25)
+                    .padding(.bottom)
+                    .padding(.top, 80)
+                }
+                .padding(.top, 30)
             }
             .padding(.vertical)
         }
@@ -85,6 +102,36 @@ struct Home: View {
                     ,alignment: .bottom
                 )
         }
+    }
+    
+    @ViewBuilder
+    func productCardView(product: Product) -> some View {
+        VStack(spacing: 10) {
+            Image(product.productImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: getRect().width / 2.5, height: getRect().width / 2.5)
+                //moving half the image over the frame
+                .offset(y: -80)
+                .padding(.bottom, -80)
+            Text(product.title)
+                .font(.custom(customFont, size: 18))
+                .fontWeight(.semibold)
+                .padding(.top)
+            Text(product.subtitle)
+                .font(.custom(customFont, size: 14))
+                .foregroundStyle(Color.gray)
+            Text(product.price)
+                .font(.custom(customFont, size: 16))
+                .foregroundStyle(Color.indigo)
+                .fontWeight(.bold)
+                .padding(.top,5)
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 22)
+        .background(Color.white
+            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)))
+        )
     }
 }
 

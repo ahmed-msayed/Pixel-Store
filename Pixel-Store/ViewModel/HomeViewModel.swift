@@ -17,6 +17,7 @@ class HomeViewModel: ObservableObject {
         Product(type: .phone, title: "iPhone 13", subtitle: "Blue", price: "$699", productImage: "Iphone-13"),
         Product(type: .phone, title: "iPhone 15", subtitle: "Pro Max: Grey", price: "$800", productImage: "Iphone-15-Pro-Max"),
         Product(type: .laptop, title: "Dell Laptop", subtitle: "Vostro - Grey", price: "$999", productImage: "DELL-Laptop"),
+        Product(type: .laptop, title: "Dell Laptop", subtitle: "Inspect - Grey", price: "$900", productImage: "DELL-Laptop"),
         Product(type: .printer, title: "HP Printer", subtitle: "Laser Printer", price: "$500", productImage: "HP-Laser-Printer"),
         Product(type: .storage, title: "Western HDD", subtitle: "HDD 1 TB", price: "$150", productImage: "WD-Hard-Drive"),
         Product(type: .speaker, title: "JBL Speaker", subtitle: "JBL GO3", price: "$200", productImage: "JBL-GO3"),

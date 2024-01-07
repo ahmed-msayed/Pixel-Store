@@ -8,7 +8,7 @@
 import SwiftUI
 
 //product model
-struct Product:Identifiable, Hashable {
+struct Product: Identifiable, Hashable {
     var id = UUID().uuidString
     var type: ProductType
     var title: String
