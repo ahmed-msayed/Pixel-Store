@@ -23,4 +23,28 @@ class HomeViewModel: ObservableObject {
         Product(type: .speaker, title: "JBL Speaker", subtitle: "JBL GO3", price: "$200", productImage: "JBL-GO3"),
         Product(type: .powerBank, title: "Anker Powerbank", subtitle: "10,000 Amp", price: "$230", productImage: "Anker-Powerbank")
     ]
+    
+    //filtered products
+    @Published var filteredProducts: [Product] = []
+    
+    init() {
+        filterProductByType()
+    }
+    
+    func filterProductByType() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let results = self.products
+                .lazy   //since it will require more memory
+                .filter { product in
+                    return product.type == self.productType
+                }
+                .prefix(4)  //limit results
+            
+            DispatchQueue.main.async {
+                self.filteredProducts = results.compactMap({ product in
+                    return product
+                })
+            }
+        }
+    }
 }

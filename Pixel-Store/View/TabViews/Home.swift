@@ -53,12 +53,9 @@ struct Home: View {
                 //products page
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 25) {
-                        ForEach(homeData.products) { product in
+                        ForEach(homeData.filteredProducts) { filteredProduct in
                             //product card
-                            //simple but returns all data each time then filter
-                            //if product.type == homeData.productType {
-                                productCardView(product: product)
-                            //}
+                                productCardView(product: filteredProduct)
                         }
                     }
                     .padding(.horizontal, 25)
@@ -71,6 +68,10 @@ struct Home: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("HomeBG"))
+        //update data when tab changes
+        .onChange(of: homeData.productType) {
+            homeData.filterProductByType()
+        }
     }
     
     @ViewBuilder
