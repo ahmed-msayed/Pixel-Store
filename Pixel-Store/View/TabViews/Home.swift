@@ -63,6 +63,22 @@ struct Home: View {
                     .padding(.top, 80)
                 }
                 .padding(.top, 30)
+                
+                //"See More" button since we limited to 4 products
+                Button {
+                    homeData.showMoreProductsOnType.toggle()
+                } label: {
+                    Label {
+                        Image(systemName: "arrow.right")
+                    } icon: {
+                        Text("see more")
+                    }
+                    .font(.custom(customFont, size: 15)).bold()
+                    .foregroundStyle(Color.indigo)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing)
+                .padding(.top, 10)
             }
             .padding(.vertical)
         }
@@ -72,6 +88,10 @@ struct Home: View {
         .onChange(of: homeData.productType) {
             homeData.filterProductByType()
         }
+        //show see more products
+        .sheet(isPresented: $homeData.showMoreProductsOnType, content: {
+            MoreProductsView()
+        })
     }
     
     @ViewBuilder

@@ -17,13 +17,20 @@ class LoginPageModel: ObservableObject {
     @Published var reEnterPassword: String = ""
     @Published var showReEnterPassword: Bool = false
     
+    //log status
+    @AppStorage("lgog_status") var log_status: Bool = false
+    
     
     func login() {
-        
+        withAnimation {
+            log_status = true
+        }
     }
 
     func register() {
-        
+        withAnimation {
+            log_status = true
+        }
     }
     
     func forgotPassword() {

@@ -8,12 +8,16 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    
     @Published var productType: ProductType = .wearable
     
     //sample products
     @Published var products: [Product] = [
         Product(type: .wearable, title: "Apple Watch", subtitle: "Series Ultra: Black", price: "$359", productImage: "Apple-Watch-Ultra"),
         Product(type: .wearable, title: "Samsung Watch", subtitle: "Watch 5 Pro: Black", price: "$180", productImage: "Galaxy-Watch-5-Pro"),
+        Product(type: .wearable, title: "Apple Watch", subtitle: "Watch Series 8: Grey", price: "$400", productImage: "apple-watch-8"),
+        Product(type: .wearable, title: "Samsung Watch", subtitle: "Galaxy Watch 6: Black", price: "$180", productImage: "galaxy-watch-6"),
+        Product(type: .wearable, title: "Xiaomi Watch", subtitle: "Redmi Lite 2: Blue", price: "$90", productImage: "xiaomi-redmi-2"),
         Product(type: .phone, title: "iPhone 13", subtitle: "Blue", price: "$699", productImage: "Iphone-13"),
         Product(type: .phone, title: "iPhone 15", subtitle: "Pro Max: Grey", price: "$800", productImage: "Iphone-15-Pro-Max"),
         Product(type: .laptop, title: "Dell Laptop", subtitle: "Vostro - Grey", price: "$999", productImage: "DELL-Laptop"),
@@ -27,6 +31,9 @@ class HomeViewModel: ObservableObject {
     //filtered products
     @Published var filteredProducts: [Product] = []
     
+    //more products on the type
+    @Published var showMoreProductsOnType: Bool = false
+    
     init() {
         filterProductByType()
     }
@@ -38,7 +45,7 @@ class HomeViewModel: ObservableObject {
                 .filter { product in
                     return product.type == self.productType
                 }
-                .prefix(4)  //limit results
+                .prefix(4)  //to limit results
             
             DispatchQueue.main.async {
                 self.filteredProducts = results.compactMap({ product in
