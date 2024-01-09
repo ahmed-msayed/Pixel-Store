@@ -34,6 +34,10 @@ class HomeViewModel: ObservableObject {
     //more products on the type
     @Published var showMoreProductsOnType: Bool = false
     
+    //search data
+    @Published var searchText: String = ""
+    @Published var searchActivated: Bool = false
+    
     init() {
         filterProductByType()
     }

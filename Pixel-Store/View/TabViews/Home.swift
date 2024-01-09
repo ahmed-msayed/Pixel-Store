@@ -16,21 +16,25 @@ struct Home: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             
-            VStack(spacing: 20) {
+            VStack(spacing: 15) {
                 
                 //search bar
-                HStack(spacing: 15) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.title2)
-                        .foregroundStyle(Color.gray)
-                    TextField("Search", text: .constant(""))
-                        .disabled(true)
+                ZStack {
+                    if homeData.searchActivated {
+                        searchBarView()
+                    } else {
+                        searchBarView()
+                            .matchedGeometryEffect(id: "SEARCHBAR", in: animation)
+                    }
                 }
-                .padding(.vertical, 12)
-                .padding(.horizontal)
-                .background(Capsule().strokeBorder(Color.gray, lineWidth: 0.8))
                 .frame(width: getRect().width / 1.6)
                 .padding(.horizontal, 25)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    withAnimation(.easeOut) {
+                        homeData.searchActivated = true
+                    }
+                }
                 
                 //title
                 Text("Order online \nCollect in store")
@@ -92,6 +96,29 @@ struct Home: View {
         .sheet(isPresented: $homeData.showMoreProductsOnType, content: {
             MoreProductsView()
         })
+        //display search view
+        .overlay {
+            ZStack {
+                if homeData.searchActivated {
+                    SearchView(animation: animation)
+                        .environmentObject(homeData)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func searchBarView() -> some View {
+        HStack(spacing: 15) {
+            Image(systemName: "magnifyingglass")
+                .font(.title2)
+                .foregroundStyle(Color.gray)
+            TextField("Search", text: .constant(""))
+                .disabled(true)
+        }
+        .padding(.vertical, 12)
+        .padding(.horizontal)
+        .background(Capsule().strokeBorder(Color.gray, lineWidth: 0.8))
     }
     
     @ViewBuilder
