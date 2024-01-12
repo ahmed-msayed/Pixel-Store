@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Combine
+
+//use combine to monitor search field, and search after 0.5 seconds wait
 
 class HomeViewModel: ObservableObject {
     
@@ -37,9 +40,22 @@ class HomeViewModel: ObservableObject {
     //search data
     @Published var searchText: String = ""
     @Published var searchActivated: Bool = false
+    @Published var searchedProducts: [Product]?
+    
+    var searchCancellable: AnyCancellable?
     
     init() {
         filterProductByType()
+        
+        searchCancellable = $searchText.removeDuplicates()
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .sink(receiveValue: { str in
+                if str != "" {
+                    self.filterProductBySearch()
+                } else {
+                    self.searchedProducts = nil
+                }
+            })
     }
     
     func filterProductByType() {
@@ -53,6 +69,22 @@ class HomeViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self.filteredProducts = results.compactMap({ product in
+                    return product
+                })
+            }
+        }
+    }
+    
+    func filterProductBySearch() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let results = self.products
+                .lazy   //since it will require more memory
+                .filter { product in
+                    return product.title.lowercased().contains(self.searchText.lowercased())
+                }
+            
+            DispatchQueue.main.async {
+                self.searchedProducts = results.compactMap({ product in
                     return product
                 })
             }

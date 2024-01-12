@@ -31,7 +31,7 @@ struct Home: View {
                 .padding(.horizontal, 25)
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    withAnimation(.easeOut) {
+                    withAnimation(.easeInOut) {
                         homeData.searchActivated = true
                     }
                 }
@@ -88,6 +88,7 @@ struct Home: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("HomeBG"))
+        
         //update data when tab changes
         .onChange(of: homeData.productType) {
             homeData.filterProductByType()
