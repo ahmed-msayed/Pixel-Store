@@ -23,7 +23,7 @@ struct MainPage: View {
             TabView(selection: $currentTab) {
                 Home().tag(Tab.home)
                 Text("like").tag(Tab.like)
-                Text("profile").tag(Tab.profile)
+                ProfilePage().tag(Tab.profile)
                 Text("cart").tag(Tab.cart)
             }
             
