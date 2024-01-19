@@ -12,6 +12,11 @@ struct MainPage: View {
     //current tab
     @State var currentTab: Tab = .home
     
+    @StateObject var sharedData: SharedDataModel = SharedDataModel()
+    
+    //animation namespace
+    @Namespace var animation
+    
     //hide tabbar
     init() {
         UITabBar.appearance().isHidden = true
@@ -21,7 +26,9 @@ struct MainPage: View {
         //tab view
         VStack (spacing: 0) {
             TabView(selection: $currentTab) {
-                Home().tag(Tab.home)
+                Home(animation: animation)
+                    .environmentObject(sharedData)
+                    .tag(Tab.home)
                 Text("like").tag(Tab.like)
                 ProfilePage().tag(Tab.profile)
                 Text("cart").tag(Tab.cart)
@@ -57,6 +64,17 @@ struct MainPage: View {
             .padding(.bottom, 10)
         }
         .background(Color("HomeBG").ignoresSafeArea())
+        .overlay {
+            ZStack {
+                //detail page
+                if let product = sharedData.productDetails, sharedData.showProductDetails {
+                    ProductDetailView(product: product, animation: animation)
+                        .environmentObject(sharedData)
+                    //adding transitions
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
+                }
+            }
+        }
     }
 }
 

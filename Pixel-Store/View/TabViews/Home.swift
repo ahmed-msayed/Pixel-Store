@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Home: View {
     //for matched geometry effect
-    @Namespace var animation
+    var animation: Namespace.ID
+    
+    //shared data
+    @EnvironmentObject var sharedData: SharedDataModel
     
     @StateObject var homeData: HomeViewModel = HomeViewModel()
     
@@ -156,9 +159,19 @@ struct Home: View {
     @ViewBuilder
     func productCardView(product: Product) -> some View {
         VStack(spacing: 10) {
-            Image(product.productImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            ZStack {
+                if sharedData.showProductDetails {
+                    Image(product.productImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .opacity(0)
+                } else {
+                    Image(product.productImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
+                }
+            }
                 .frame(width: getRect().width / 2.5, height: getRect().width / 2.5)
                 //moving half the image over the frame
                 .offset(y: -80)
@@ -181,9 +194,16 @@ struct Home: View {
         .background(Color.white
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)))
         )
+        //show product detail when tapped
+        .onTapGesture {
+            withAnimation(.easeInOut) {
+                sharedData.productDetails = product
+                sharedData.showProductDetails = true
+            }
+        }
     }
 }
 
 #Preview {
-    Home()
+    MainPage()
 }

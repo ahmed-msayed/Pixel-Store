@@ -11,6 +11,9 @@ struct ProductDetailView: View {
     
     var product: Product
     
+    //for matched geometry effect
+    var animation: Namespace.ID
+    
     //shared data model
     @EnvironmentObject var sharedData: SharedDataModel
     
@@ -41,11 +44,14 @@ struct ProductDetailView: View {
                 Image(product.productImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    //matched geometry
+                    .matchedGeometryEffect(id: "\(product.id)\(sharedData.fromSearchPage ? "SEARCH" : "IMAGE")", in: animation)
                     .padding(.horizontal)
                     .offset(y: -12)
                     .frame(maxHeight: .infinity)
             }
             .frame(height: getRect().height / 2.7)
+            .zIndex(1)
             
             //product details
             ScrollView(.vertical, showsIndicators: false) {
@@ -94,6 +100,7 @@ struct ProductDetailView: View {
                             .background(
                                 Color.indigo
                                     .cornerRadius(15)
+                                    .shadow(radius: 5)
                             )
                     }
                 }
@@ -107,6 +114,7 @@ struct ProductDetailView: View {
                     .clipShape(CustomCorners(corners: [.topLeft, .topRight], radius: 25))
                     .ignoresSafeArea()
             )
+            .zIndex(0)
         }
         .background(Color("HomeBG").ignoresSafeArea())
     }
@@ -114,6 +122,7 @@ struct ProductDetailView: View {
 
 #Preview {
     //sample for preview
-    ProductDetailView(product: HomeViewModel().products[0])
-        .environmentObject(SharedDataModel())
+//    ProductDetailView(product: HomeViewModel().products[0])
+//        .environmentObject(SharedDataModel())
+    MainPage()
 }
