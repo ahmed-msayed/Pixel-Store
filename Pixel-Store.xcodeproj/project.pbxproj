@@ -26,6 +26,7 @@
 		E293BA542B5186470086CA2A /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA532B5186470086CA2A /* ProfilePage.swift */; };
 		E293BA562B519F6F0086CA2A /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA552B519F6F0086CA2A /* ProductDetailView.swift */; };
 		E293BA582B51B4180086CA2A /* SharedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA572B51B4180086CA2A /* SharedDataModel.swift */; };
+		E293BA5A2B6BF0580086CA2A /* LikedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293BA592B6BF0580086CA2A /* LikedPage.swift */; };
 		E2B1AF972B2271E300E9A76B /* Pixel_StoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1AF962B2271E300E9A76B /* Pixel_StoreApp.swift */; };
 		E2B1AF992B2271E300E9A76B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B1AF982B2271E300E9A76B /* ContentView.swift */; };
 		E2B1AF9B2B2271E500E9A76B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B1AF9A2B2271E500E9A76B /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		E293BA532B5186470086CA2A /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		E293BA552B519F6F0086CA2A /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		E293BA572B51B4180086CA2A /* SharedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataModel.swift; sourceTree = "<group>"; };
+		E293BA592B6BF0580086CA2A /* LikedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedPage.swift; sourceTree = "<group>"; };
 		E2B1AF932B2271E300E9A76B /* Pixel-Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel-Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B1AF962B2271E300E9A76B /* Pixel_StoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel_StoreApp.swift; sourceTree = "<group>"; };
 		E2B1AF982B2271E300E9A76B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				E293BA462B489E5D0086CA2A /* Home.swift */,
 				E293BA532B5186470086CA2A /* ProfilePage.swift */,
+				E293BA592B6BF0580086CA2A /* LikedPage.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				E2584EBA2B235D210075E21B /* OnBoardingPage.swift in Sources */,
 				E293BA4C2B49FF490086CA2A /* HomeViewModel.swift in Sources */,
 				E293BA542B5186470086CA2A /* ProfilePage.swift in Sources */,
+				E293BA5A2B6BF0580086CA2A /* LikedPage.swift in Sources */,
 				E2798A852B45FDA50014420A /* Ext-View.swift in Sources */,
 				E293BA502B4D9B5A0086CA2A /* SearchView.swift in Sources */,
 				E2798A872B45FF0D0014420A /* CustomCorners.swift in Sources */,
