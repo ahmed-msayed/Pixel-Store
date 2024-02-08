@@ -29,9 +29,13 @@ struct MainPage: View {
                 Home(animation: animation)
                     .environmentObject(sharedData)
                     .tag(Tab.home)
-                Text("like").tag(Tab.like)
+                LikedPage()
+                    .environmentObject(sharedData)
+                    .tag(Tab.like)
                 ProfilePage().tag(Tab.profile)
-                Text("cart").tag(Tab.cart)
+                CartPage()
+                    .environmentObject(sharedData)
+                    .tag(Tab.cart)
             }
             
             //custom tabbar

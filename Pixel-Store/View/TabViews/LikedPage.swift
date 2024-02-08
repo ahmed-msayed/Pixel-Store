@@ -31,6 +31,8 @@ struct LikedPage: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 25, height: 25)
                         }
+                        .disabled(sharedData.likedProducts.isEmpty ? true : false)
+                        .opacity(sharedData.likedProducts.isEmpty ? 0 : 1)
                     }
                     
                     //checking if liked products is empty
